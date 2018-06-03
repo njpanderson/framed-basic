@@ -1,7 +1,7 @@
 const path = require('path');
 const util = require('util');
 const rollup = require('rollup');
-const rollupConfig = require('./rollup.config.js');
+const rollupConfig = require('./config.js');
 
 module.exports = {
 	root: __dirname,
