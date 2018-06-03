@@ -1,4 +1,7 @@
 module.exports = {
 	root: __dirname,
-	config: require('./rollup.config.js')
+	buildConfig: require('./rollup.config.js'),
+	templates: {
+		index: 'index.html'
+	}
 };
