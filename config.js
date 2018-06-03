@@ -7,7 +7,7 @@ const sassUtils = require('node-sass-utils')(nodeSass);
 module.exports = (options) => {
 	return {
 		inputOptions: {
-			input: __dirname + '/src/main.js',
+			input: './src/main.js',
 			plugins: [
 				resolve(),
 				commonjs(),

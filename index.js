@@ -13,28 +13,16 @@ module.exports = {
 
 			config = rollupConfig(options);
 
-			// Override config
-			// if (typeof config.inputOptions.input === 'string') {
-			// 	config.inputOptions.input = path.resolve(
-			// 		this.template.root + path.sep + config.inputOptions.input
-			// 	);
-			// }
-
-			config.outputOptions = Object.assign(config.outputOptions, {
+			config.outputOptions = Object.assign({}, config.outputOptions, {
 				file: outputFile
 			});
-
-			console.log(util.inspect(config, {
-				depth: 3,
-				colors: true
-			}));
 
 			rollup.rollup(config.inputOptions)
 				.then((bundle) => bundle.write(config.outputOptions))
 				.then(() => {
-					return {
+					resolve({
 						script: jsFilename
-					};
+					});
 				})
 				.catch(reject);
 		});
