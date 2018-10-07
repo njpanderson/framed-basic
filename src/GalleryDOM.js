@@ -179,6 +179,7 @@ class GalleryDOM {
 		switch (asset.contentType) {
 			case 'image/jpeg':
 			case 'image/png':
+			case 'image/gif':
 				$container.addClass(this.classes.asset + '--image');
 				$asset = this.createImageAsset(asset.url);
 				break;
