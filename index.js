@@ -1,20 +1,23 @@
 const rollup = require('rollup');
-const config = require('./rollup.config.js');
+const rollupConfig = require('./rollup.config.js');
 
 module.exports = {
 	root: __dirname,
 	builder: (options, outputFile) => {
 		// Return the promise
 		return new Promise((resolve, reject) => {
-			let jsFilename = 'bundle.js';
+			let jsFilename = 'bundle.js',
+				config = {};
 
 			config.output = {
-				...config.outputOptions,
+				...rollupConfig.outputOptions,
 				file: outputFile
 			};
 
-			rollup.rollup(config.input)
-				.then((bundle) => bundle.write(config.outputOptions))
+			rollup.rollup({
+				input: rollupConfig.input
+			})
+				.then((bundle) => bundle.write(config.output))
 				.then(() => {
 					resolve({
 						script: jsFilename
