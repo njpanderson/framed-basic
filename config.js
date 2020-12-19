@@ -1,13 +1,13 @@
-const scss = require('rollup-plugin-scss');
-const resolve = require('@rollup/plugin-node-resolve');
-const commonjs = require('@rollup/plugin-commonjs');
+import scss from 'rollup-plugin-scss';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 module.exports = (options) => {
 	return {
 		inputOptions: {
 			input: './src/main.js',
 			plugins: [
-				resolve(),
+				nodeResolve(),
 				commonjs(),
 				scss({
 					sass: require('sass')
