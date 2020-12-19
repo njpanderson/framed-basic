@@ -15,7 +15,8 @@ module.exports = {
 			};
 
 			rollup.rollup({
-				input: rollupConfig.input
+				input: rollupConfig.input,
+				plugins: rollupConfig.plugins
 			})
 				.then((bundle) => bundle.write(config.output))
 				.then(() => {
