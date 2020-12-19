@@ -4,6 +4,7 @@
   "description": "A basic template for Framed",
   "main": "index.js",
   "scripts": {
+    "rollup": "rollup -c rollup.config.js src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
