@@ -1,8 +1,8 @@
 const sass = require('rollup-plugin-sass');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
-const sass = require('sass');
-const sassUtils = require('node-sass-utils')(sass);
+const nodeSass = require('sass');
+const sassUtils = require('node-sass-utils')(nodeSass);
 
 module.exports = (options) => {
 	return {
